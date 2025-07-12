@@ -82,7 +82,7 @@
 
     .placeholder {
       height: 75px;
-      background: #e9fff2;
+      background: #effff3;
       margin-bottom: 20px;
       margin-top: 20px;
       display: flex;
@@ -221,7 +221,7 @@
     }
 
     .floating-icons button {
-      background: #e9fff2;
+      background: #effff3;
       border: 3px solid rgb(0, 255, 120);
       padding: 10px;
       border-radius: 18px;
@@ -233,8 +233,8 @@
 
     .floating-icons button:hover {
       background: #b1ffd1;
-      border-color: rgb(0, 255, 120);
-      color: rgb(0, 255, 120);
+      border-color: #00ff78;
+      color: #00ff78;
       transform: scale(1.1);
     }
 
@@ -284,6 +284,7 @@
         <div class="placeholder" onclick="showContent('project5')">Memristor</div>
         <div class="placeholder" onclick="showContent('project6')">Locked in with a Ghost</div>
         <div class="placeholder" onclick="showContent('project7')">Feelings Festival</div>
+        <div class="placeholder" onclick="showContent('project8')">Project: Stackace</div>
       </div>
     </div>
 
@@ -299,6 +300,7 @@
         <div class="placeholder" onclick="selectMobile('project5')">Memristor</div>
         <div class="placeholder" onclick="selectMobile('project6')">Locked in with a Ghost</div>
         <div class="placeholder" onclick="selectMobile('project7')">Feelings Festival</div>
+        <div class="placeholder" onclick="selectMobile('project8')">Project: Stackace</div>
       </div>
       <div class="viewer-content" id="viewer-content">
         <!-- Load About section by default -->
@@ -368,6 +370,10 @@
       project7: `
         <h2>Feelings Festival</h2>
         <p>Description and details about the Feelings Festival project.</p>
+      `,
+      project8: `
+      <h2>Projet Stackace</h2>
+      <p>Description and details about the Stackace project.</p>
       `
     };
 
@@ -406,8 +412,12 @@
         <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8.5 8h3.7v2.3h.1c.5-.9 1.8-2.3 3.8-2.3 4 0 4.7 2.6 4.7 5.9V24h-4v-7.6c0-1.8 0-4.2-2.5-4.2s-2.9 2-2.9 4V24h-4V8z"/>
       </svg>
     </button>
-  </div>
 
+      <!-- Itch Button -->
+    <button onclick="window.open('https://artemistake.itch.io/', '_blank')" title="Itch.io">
+      <img src="Itch.svg" alt="Itch.io icon" width="43" height="40" />
+    </button>
+  </div>
 
 </body>
 </html>
