@@ -5,49 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio</title>
   <link rel="icon" href="favicon.png" type="image/png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
   <style>
-    .winky-rough {
-      font-family: "Winky Rough", sans-serif;
+    .bricolage-grotesque {
+      font-family: "Bricolage Grotesque", sans-serif;
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal;
+      font-variation-settings: "wdth" 100;
       transition: font-weight 3s ease;
     }
-    .winky-rough:hover {
+    .bricolage-grotesque:hover {
       font-weight: 800;
+    }
+    .crimson-text-regular {
+      font-family: "Crimson Text", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .crimson-text-semibold {
+      font-family: "Crimson Text", serif;
+      font-weight: 600;
+      font-style: normal;
+    }
+    .crimson-text-bold {
+      font-family: "Crimson Text", serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+    .crimson-text-regular-italic {
+      font-family: "Crimson Text", serif;
+      font-weight: 400;
+      font-style: italic;
+    }
+    .crimson-text-semibold-italic {
+      font-family: "Crimson Text", serif;
+      font-weight: 600;
+      font-style: italic;
+    }
+    .crimson-text-bold-italic {
+      font-family: "Crimson Text", serif;
+      font-weight: 700;
+      font-style: italic;
     }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     html, body {
       height: 100%;
       overflow: hidden;
       font-family: Arial, sans-serif;
     }
-
     .container {
       display: flex;
       height: 100vh;
       width: 100vw;
     }
-
     .menu {
       flex: 0 0 18%;
       overflow-y: scroll;
       padding: 20px;
-      border-right: 3.5px solid rgba(0, 255, 120, 0.4); /* Match green button border */
+      border-right: 3.5px solid rgba(0, 255, 120, 0.4);
     }
-
     .menu-title {
       text-align: center;
       cursor: pointer;
@@ -55,15 +81,13 @@
       font-size: 42px;
       color: #222;
       transition: color 0.3s ease;
-      font-family: "Winky Rough", sans-serif;
+      font-family: "Bricolage Grotesque", sans-serif;
       font-optical-sizing: auto;
       font-weight: 400;
     }
-
     .menu-title:hover {
       color: rgb(0, 255, 120);
     }
-
     .viewer {
       flex: 3;
       overflow-y: scroll;
@@ -71,15 +95,13 @@
       position: relative;
       width: 100%;
     }
-
     .section {
       margin-bottom: 40px;
     }
-
     .section h2 {
       margin-bottom: 10px;
+      font-weight: 600;
     }
-
     .placeholder {
       height: 75px;
       background: #effff3;
@@ -94,60 +116,52 @@
       border-radius: 18px;
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       animation: blob 2s infinite ease-in-out;
-
-      border: 2px solid rgba(0, 255, 120, 0.4); /* greenish border */
+      border: 2px solid rgba(0, 255, 120, 0.4);
       box-shadow:
-        0 0 10px rgba(0, 255, 120, 0.4),         /* outer glow */
-        inset 0 0 10px rgba(0, 255, 120, 0.2);   /* inner fading glow */
+        0 0 10px rgba(0, 255, 120, 0.4),
+        inset 0 0 10px rgba(0, 255, 120, 0.2);
       background-clip: padding-box;
-      font-family: "Winky Rough", sans-serif;
+      font-family: "Bricolage Grotesque", sans-serif;
       font-optical-sizing: auto;
       font-weight: 500;
       transition: font-weight 0.5s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-
     .placeholder:hover {
       transform: scale(1.07);
       background-color: #d2f5dc;
       margin-bottom: 24px;
       margin-top: 24px;
       font-weight: 800;
-      
     }
-
     .viewer-content {
       padding: 20px;
-      justify-content: center;
+      justify-content: left;
       text-align: center;
-      font-family:"Winky Sans";
+      font-family: "Crimson Text", serif;
       font-weight: 420;
-      font-size: 24;
+      font-size: 20px;
       background: #fffffff6;
       min-height: 100%;
       border-radius: 18px;
       transition: opacity 0.5s ease-in-out;
       opacity: 1;
     }
-
     .viewer-content h2 {
       text-align: center;
       font-size: 42px;
-      font-family: "Winky Rough", sans-serif;
+      font-family: "Bricolage Grotesque", sans-serif;
       font-optical-sizing: auto;
-      font-weight: 400;
+      font-weight: 600;
     }
-
-    /* Wrapper for iframe to add background and double border */
     .iframe-wrapper {
-      background: rgba(0, 255, 120, 0.1); /* subtle greenish background */
+      background: rgba(0, 255, 120, 0.1);
       border-radius: 18px;
-      padding: 8px; /* space for outer border */
+      padding: 8px;
       box-sizing: border-box;
       margin: 20px 0;
-      border: 3.5px solid rgba(0, 255, 120, 0.4); /* main border color */
+      border: 3.5px solid rgba(0, 255, 120, 0.4);
       position: relative;
     }
-
     .iframe-wrapper::before {
       content: '';
       position: absolute;
@@ -159,25 +173,22 @@
       border: 2px solid rgba(0, 255, 120, 0.25);
       pointer-events: none;
     }
-
     .viewer-content iframe {
       position: relative;
       z-index: 1;
-      border-radius: 18px; /* same as placeholders */
+      border-radius: 18px;
       display: block;
       margin: 0 auto;
       width: 100%;
       height: auto;
       aspect-ratio: 16 / 9;
-      border: none; /* remove default border */
+      border: none;
     }
-
     .viewer-content img {
       max-width: 100%;
       margin: 10px auto;
       display: block;
     }
-
     .hamburger {
       display: none;
       position: absolute;
@@ -191,7 +202,6 @@
       font-size: 24px;
       cursor: pointer;
     }
-
     .mobile-menu {
       position: absolute;
       top: 0;
@@ -205,11 +215,9 @@
       z-index: 9;
       transition: left 0.3s ease-in-out;
     }
-
     .mobile-menu.open {
       left: 0;
     }
-
     .floating-icons {
       position: fixed;
       bottom: 30px;
@@ -219,7 +227,6 @@
       z-index: 100;
       color: rgb(0, 255, 120);
     }
-
     .floating-icons button {
       background: #effff3;
       border: 3px solid rgb(0, 255, 120);
@@ -230,14 +237,87 @@
       color: rgb(0, 255, 120);
       transition: all 0.3s ease;
     }
-
     .floating-icons button:hover {
       background: #b1ffd1;
       border-color: #00ff78;
       color: #00ff78;
       transform: scale(1.1);
     }
-
+    .gallery-wrapper {
+      background: rgba(0, 255, 120, 0.1);
+      border-radius: 18px;
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-top: 3px;
+      padding-bottom: 3px ;
+      box-sizing: border-box;
+      margin: 10px 0;
+      border: 3.5px solid rgba(0, 255, 120, 0.4);
+      position: relative;
+    }
+    .gallery-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      border-radius: 18px;
+      border: 2px solid rgba(0, 255, 119, 0);
+      pointer-events: none;
+    }
+    .gallery-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .gallery-row:last-child {
+      margin-bottom: 0;
+    }
+    .gallery-item {
+      flex: 1;
+      min-width: 49%;
+      max-width: 49%;
+      position: relative;
+      z-index: 1;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .gallery-item.horizontal {
+      min-width: 98%;
+      max-width: 98%;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 18px;
+    }
+    @media (min-width: 768px) {
+      .gallery-row-4 .gallery-item {
+        min-width: 24%;
+        max-width: 24%;
+      }
+      .gallery-row-4 .gallery-item.horizontal {
+        min-width: 49%;
+        max-width: 49%;
+      }
+      .gallery-row-2 .gallery-item {
+        min-width: 49%;
+        max-width: 49%;
+      }
+      .gallery-row-2 .gallery-item.horizontal {
+        min-width: 98%;
+        max-width: 98%;
+      }
+    }
+    @media (max-width: 767px) {
+      .gallery-item {
+        min-width: 49%;
+        max-width: 49%;
+      }
+    }
     @media (max-width: 768px) {
       .menu {
         display: none;
@@ -254,11 +334,10 @@
         height: 25px !important;
       }
       .floating-icons button {
-        font-size: 14px; /* optional: scale down font size if needed */
-        padding: 6px; /* smaller padding for smaller buttons */
+        font-size: 14px;
+        padding: 6px;
       }
     }
-
     @keyframes blob {
       0% {
         border-radius: 16px;
@@ -291,7 +370,6 @@
         <div class="placeholder" onclick="showContent('project8')">Project: Stackace</div>
       </div>
     </div>
-
     <div class="viewer" id="viewer">
       <button class="hamburger" onclick="toggleMobileMenu()">☰</button>
       <div class="mobile-menu" id="mobile-menu">
@@ -307,34 +385,46 @@
         <div class="placeholder" onclick="selectMobile('project8')">Project: Stackace</div>
       </div>
       <div class="viewer-content" id="viewer-content">
-        <!-- Load About section by default -->
         <h2>About Me</h2>
         <p>This is a general presentation about me. I'm a web developer passionate about building clean, functional, and engaging user experiences.</p>
       </div>
     </div>
   </div>
-
   <script>
     const contentMap = {
-      about: `
-        <h2>About Me</h2>
-        <p>This is a general presentation about me. I'm a web developer passionate about building clean, functional, and engaging user experiences.</p>
-      `,
-      project1: `
-        <h2>Symbiosis</h2>
-        <div class="iframe-wrapper">
-          <iframe src="https://www.youtube.com/embed/haf3h4dvCPY?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
+      about: `<h2>About Me</h2>
+        <p>This is a general presentation about me. I'm a web developer passionate about building clean, functional, and engaging user experiences.</p>`,
+      project1: `<h2>Symbiosis</h2>
+      <div class="gallery-wrapper">
+        <div class="gallery-row gallery-row-4">
+          <div class="gallery-item">
+            <img src="symbiosis/Symbiosis7.jpg" alt="Symbiosis Image 1">
+          </div>
+          <div class="gallery-item">
+            <img src="symbiosis/Symbiosis8.jpg" alt="Symbiosis Image 2">
+          </div>
+          <div class="gallery-item horizontal">
+            <img src="symbiosis/Symbiosis9.jpg" alt="Symbiosis Image 3">
+          </div>
         </div>
-        <p>Description and details about Symbiosis.</p>
-        <img src="https://via.placeholder.com/600x400" alt="Symbiosis Image 1">
-        <img src="https://via.placeholder.com/600x400" alt="Symbiosis Image 2">
-      `,
-      project2: `
-        <h2>Johanna Syprit</h2>
+      </div>
+      <p>Description and details about Symbiosis.</p>`,
+      project2: `<h2>Johanna Syprit</h2>
+        <div class="iframe-wrapper">
+        <iframe src="https://www.youtube.com/embed/Tl9wrmYFZBo?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
+        </div>
         <p>Description and details about Johanna Syprit.</p>
-      `,
-      project3: `
-        <h2>Taskmaster</h2>
+        <div class="gallery-wrapper">
+          <div class="gallery-row gallery-row-2">
+            <div class="gallery-item">
+              <img src="johanna/Spyrit1.jpg" alt="Spyrit Image 1">
+            </div>
+            <div class="gallery-item">
+              <img src="johanna/Spyrit2.jpg" alt="Spyrit Image 2">
+            </div>
+          </div>
+        </div>`,
+      project3: `<h2>Taskmaster</h2>
         <div class="iframe-wrapper">
           <iframe src="https://www.youtube.com/embed/1P3K6GGuKKk?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -346,39 +436,27 @@
         <BR>
         <BR>
         <BR>
-        <BR>     
-        `,
-      
-      project4: `
-        <h2>Save the Gobelin</h2>
+        <BR>`,
+      project4: `<h2>Save the Gobelin</h2>
         <div class="iframe-wrapper">
           <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
         </div>
         <p>This project demonstrates a large volume of content to test scrolling behavior on the viewer side.</p>
         <img src="https://via.placeholder.com/600x400" alt="Save the Gobelin Image 1">
         <img src="https://via.placeholder.com/600x400" alt="Save the Gobelin Image 2">
-        <img src="https://via.placeholder.com/600x400" alt="Save the Gobelin Image 3">
-      `,
-      thesis: `
-        <h2>Thesis</h2>
-        <p>Details and insights about my thesis project. Coming soon...</p>
-      `,
-      project5: `
-        <h2>Memristor</h2>
-        <p>Description and details about Memristor.</p>
-      `,
-      project6: `
-        <h2>Locked in with a Ghost</h2>
-        <p>Description and details about this immersive narrative experience.</p>
-      `,
-      project7: `
-        <h2>Feelings Festival</h2>
-        <p>Description and details about the Feelings Festival project.</p>
-      `,
-      project8: `
-      <h2>Projet Stackace</h2>
-      <p>Description and details about the Stackace project.</p>
-      `
+        <img src="https://via.placeholder.com/600x400" alt="Save the Gobelin Image 3">`,
+      thesis: `<h2>Thesis</h2>
+        <p>Details and insights about my thesis project. Coming soon...</p>`,
+      project5: `<h2>Memristor</h2>
+        <p>Description and details about Memristor.</p>`,
+      project6: `<h2>Locked in with a Ghost</h2>
+        <p>Description and details about this immersive narrative experience.</p>`,
+      project7: `<h2>Feelings Festival</h2>
+        <div class="iframe-wrapper">
+          <iframe src="https://www.youtube.com/embed/GjTrM8g8HdM?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
+        </div>`,
+      project8: `<h2>Projet Stackace</h2>
+      <p>Description and details about the Stackace project.</p>`
     };
 
     function showContent(key) {
@@ -400,28 +478,20 @@
       showContent(key);
     }
   </script>
-
-  <!-- Floating Social Icons -->
   <div class="floating-icons">
-    <!-- Instagram Button -->
     <button onclick="window.open('https://www.instagram.com/enzo.srr/', '_blank')" title="Instagram">
       <svg xmlns="http://www.w3.org/2000/svg" width="43" height="40" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.3.1 2 .3 2.5.5.6.3 1 .6 1.5 1.1.5.5.8.9 1.1 1.5.2.5.4 1.2.5 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.3-.3 2-.5 2.5-.3.6-.6 1-1.1 1.5-.5.5-.9.8-1.5 1.1-.5.2-1.2.4-2.5.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.3-.1-2-.3-2.5-.5-.6-.3-1-.6-1.5-1.1-.5-.5-.8-.9-1.1-1.5-.2-.5-.4-1.2-.5-2.5-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.3.3-2 .5-2.5.3-.6.6-1 1.1-1.5.5-.5.9-.8 1.5-1.1.5-.2 1.2-.4 2.5-.5 1.3-.1 1.7-.1 4.9-.1zm0-2.2C8.7 0 8.2 0 7 .1 5.8.2 4.8.4 4 .8c-.9.4-1.6.9-2.4 1.7C.9 3.4.4 4.1 0 5c-.4.8-.6 1.8-.7 3C-.9 9.2-1 9.7-1 12s.1 2.8.2 4c.1 1.2.3 2.2.7 3 .4.9.9 1.6 1.7 2.4.8.8 1.5 1.3 2.4 1.7.8.4 1.8.6 3 .7 1.2.1 1.7.2 4 .2s2.8-.1 4-.2c1.2-.1 2.2-.3 3-.7.9-.4 1.6-.9 2.4-1.7.8-.8 1.3-1.5 1.7-2.4.4-.8.6-1.8.7-3 .1-1.2.2-1.7.2-4s-.1-2.8-.2-4c-.1-1.2-.3-2.2-.7-3-.4-.9-.9-1.6-1.7-2.4C20.6.9 19.9.4 19 .1c-.8-.4-1.8-.6-3-.7C15.2 0 14.7 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4A6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.9a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/>
       </svg>
     </button>
-
-    <!-- LinkedIn Button -->
     <button onclick="window.open('https://www.linkedin.com/in/enzo-seurre-gd', '_blank')" title="LinkedIn">
       <svg xmlns="http://www.w3.org/2000/svg" width="43" height="40" fill="currentColor" viewBox="0 0 24 24">
         <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zM8.5 8h3.7v2.3h.1c.5-.9 1.8-2.3 3.8-2.3 4 0 4.7 2.6 4.7 5.9V24h-4v-7.6c0-1.8 0-4.2-2.5-4.2s-2.9 2-2.9 4V24h-4V8z"/>
       </svg>
     </button>
-
-      <!-- Itch Button -->
     <button onclick="window.open('https://artemistake.itch.io/', '_blank')" title="Itch.io">
       <img src="Itch.svg" alt="Itch.io icon" width="43" height="40" />
     </button>
   </div>
-
 </body>
 </html>
