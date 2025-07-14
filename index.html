@@ -12,6 +12,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
   <style>
+    /* Default cursor for the entire page */
+    body {
+      cursor: url('images/custom-cursor-default2.png'), auto;
+    }
+
+    /* Pointer cursor for clickable elements */
+    a, button, .placeholder, .placeholder:hover, .menu-title:hover, .floating-icons button:hover {
+      cursor: url('images/custom-cursor-pointer5.png'), pointer;
+    }
+
     .bricolage-grotesque {
       font-family: "Bricolage Grotesque", sans-serif;
       font-optical-sizing: auto;
@@ -20,60 +30,72 @@
       font-variation-settings: "wdth" 100;
       transition: font-weight 3s ease;
     }
+
     .bricolage-grotesque:hover {
       font-weight: 800;
     }
+
     .crimson-text-regular {
       font-family: "Crimson Text", serif;
       font-weight: 400;
       font-style: normal;
     }
+
     .crimson-text-semibold {
       font-family: "Crimson Text", serif;
       font-weight: 600;
       font-style: normal;
     }
+
     .crimson-text-bold {
       font-family: "Crimson Text", serif;
       font-weight: 700;
       font-style: normal;
     }
+
     .crimson-text-regular-italic {
       font-family: "Crimson Text", serif;
       font-weight: 400;
       font-style: italic;
     }
+
     .crimson-text-semibold-italic {
       font-family: "Crimson Text", serif;
       font-weight: 600;
       font-style: italic;
     }
+
     .crimson-text-bold-italic {
       font-family: "Crimson Text", serif;
       font-weight: 700;
       font-style: italic;
     }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     html, body {
       height: 100%;
       overflow: hidden;
       font-family: Arial, sans-serif;
     }
+
     .container {
       display: flex;
       height: 100vh;
       width: 100vw;
     }
+
     .menu {
       flex: 0 0 18%;
       overflow-y: scroll;
       padding: 20px;
       border-right: 3.5px solid rgba(0, 255, 120, 0.4);
     }
+
     .menu-title {
       text-align: center;
       cursor: pointer;
@@ -85,9 +107,11 @@
       font-optical-sizing: auto;
       font-weight: 400;
     }
+
     .menu-title:hover {
       color: rgb(0, 255, 120);
     }
+
     .viewer {
       flex: 3;
       overflow-y: scroll;
@@ -95,13 +119,16 @@
       position: relative;
       width: 100%;
     }
+
     .section {
       margin-bottom: 40px;
     }
+
     .section h2 {
       margin-bottom: 10px;
       font-weight: 600;
     }
+
     .placeholder {
       height: 75px;
       background: #effff3;
@@ -110,11 +137,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: calc(8px + 1vw); /* Adjust font size based on viewport width */
       color: #333;
       cursor: pointer;
       border-radius: 18px;
-      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), font-weight 0.5s ease, border-color 0.3s ease;
       animation: blob 2s infinite ease-in-out;
       border: 2px solid rgba(0, 255, 120, 0.4);
       box-shadow:
@@ -124,8 +151,29 @@
       font-family: "Bricolage Grotesque", sans-serif;
       font-optical-sizing: auto;
       font-weight: 500;
-      transition: font-weight 0.5s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      text-align: center;
+      flex-direction: column;
     }
+
+    .placeholder span {
+      display: inline-block;
+      text-align: center;
+    }
+
+    /* Optional: Media queries for fine-tuning */
+    @media (max-width: 768px) {
+      .placeholder {
+        font-size: calc(8px + 3vw); /* Slightly smaller base size for smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .placeholder {
+        font-size: calc(8px + 3vw); /* Even smaller base size for very small screens */
+      }
+    }
+
+
     .placeholder:hover {
       transform: scale(1.07);
       background-color: #d2f5dc;
@@ -133,6 +181,42 @@
       margin-top: 24px;
       font-weight: 800;
     }
+
+    .placeholder.active {
+      font-weight: 800;
+      border: 4px solid rgba(0, 150, 50, 0.8);
+      
+    }
+
+    .placeholder::after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: calc(100% + 10px);
+      width: 120px;
+      height: 120px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .placeholder:hover::after {
+      opacity: 1;
+      animation: scaleUp 0.3s ease;
+    }
+
+    @keyframes scaleUp {
+      from {
+        transform: scale(0.5);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
     .viewer-content {
       padding: 20px;
       justify-content: left;
@@ -146,6 +230,7 @@
       transition: opacity 0.5s ease-in-out;
       opacity: 1;
     }
+
     .viewer-content h2 {
       text-align: center;
       font-size: 42px;
@@ -153,6 +238,7 @@
       font-optical-sizing: auto;
       font-weight: 600;
     }
+
     .iframe-wrapper {
       background: rgba(0, 255, 120, 0.1);
       border-radius: 18px;
@@ -162,6 +248,7 @@
       border: 3.5px solid rgba(0, 255, 120, 0.4);
       position: relative;
     }
+
     .iframe-wrapper::before {
       content: '';
       position: absolute;
@@ -173,6 +260,7 @@
       border: 2px solid rgba(0, 255, 120, 0.25);
       pointer-events: none;
     }
+
     .viewer-content iframe {
       position: relative;
       z-index: 1;
@@ -184,11 +272,13 @@
       aspect-ratio: 16 / 9;
       border: none;
     }
+
     .viewer-content img {
       max-width: 100%;
       margin: 10px auto;
       display: block;
     }
+
     .hamburger {
       display: none;
       position: absolute;
@@ -202,6 +292,7 @@
       font-size: 24px;
       cursor: pointer;
     }
+
     .mobile-menu {
       position: absolute;
       top: 0;
@@ -215,9 +306,11 @@
       z-index: 9;
       transition: left 0.3s ease-in-out;
     }
+
     .mobile-menu.open {
       left: 0;
     }
+
     .floating-icons {
       position: fixed;
       bottom: 30px;
@@ -227,6 +320,7 @@
       z-index: 100;
       color: rgb(0, 255, 120);
     }
+
     .floating-icons button {
       background: #effff3;
       border: 3px solid rgb(0, 255, 120);
@@ -237,24 +331,27 @@
       color: rgb(0, 255, 120);
       transition: all 0.3s ease;
     }
+
     .floating-icons button:hover {
       background: #b1ffd1;
       border-color: #00ff78;
       color: #00ff78;
       transform: scale(1.1);
     }
+
     .gallery-wrapper {
       background: rgba(0, 255, 120, 0.1);
       border-radius: 18px;
       padding-left: 12px;
       padding-right: 12px;
       padding-top: 3px;
-      padding-bottom: 3px ;
+      padding-bottom: 3px;
       box-sizing: border-box;
       margin: 10px 0;
       border: 3.5px solid rgba(0, 255, 120, 0.4);
       position: relative;
     }
+
     .gallery-wrapper::before {
       content: '';
       position: absolute;
@@ -266,15 +363,18 @@
       border: 2px solid rgba(0, 255, 119, 0);
       pointer-events: none;
     }
+
     .gallery-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       margin-bottom: 4px;
     }
+
     .gallery-row:last-child {
       margin-bottom: 0;
     }
+
     .gallery-item {
       flex: 1;
       min-width: 49%;
@@ -284,60 +384,77 @@
       border-radius: 18px;
       overflow: hidden;
     }
+
     .gallery-item.horizontal {
       min-width: 98%;
       max-width: 98%;
     }
+
     .gallery-item img {
       width: 100%;
       height: auto;
       display: block;
       border-radius: 18px;
     }
+
     @media (min-width: 768px) {
       .gallery-row-4 .gallery-item {
         min-width: 24%;
         max-width: 24%;
       }
+
       .gallery-row-4 .gallery-item.horizontal {
         min-width: 49%;
         max-width: 49%;
       }
+
       .gallery-row-2 .gallery-item {
         min-width: 49%;
         max-width: 49%;
       }
+
       .gallery-row-2 .gallery-item.horizontal {
         min-width: 98%;
         max-width: 98%;
       }
     }
+
     @media (max-width: 767px) {
       .gallery-item {
-        min-width: 49%;
-        max-width: 49%;
+        min-width: 98%;
+        max-width: 98%;
       }
     }
+
     @media (max-width: 768px) {
       .menu {
         display: none;
       }
+
       .hamburger {
         display: block;
       }
+
       .floating-icons button svg {
         width: 28px !important;
         height: 25px !important;
       }
+
       .floating-icons button img {
         width: 28px !important;
         height: 25px !important;
       }
+
       .floating-icons button {
         font-size: 14px;
         padding: 6px;
       }
+
+      .placeholder:hover::after {
+        display: none;
+      }
     }
+
     @keyframes blob {
       0% {
         border-radius: 16px;
@@ -359,15 +476,16 @@
     <div class="menu" id="menu">
       <div class="section">
         <h2 class="menu-title" onclick="showContent('about')">Portfolio</h2>
-        <div class="placeholder" onclick="showContent('project1')">Symbiosis</div>
-        <div class="placeholder" onclick="showContent('project2')">Johanna's Syprit</div>
-        <div class="placeholder" onclick="showContent('project3')">Taskmaster</div>
-        <div class="placeholder" onclick="showContent('project4')">Save the Gobelin</div>
-        <div class="placeholder" onclick="showContent('thesis')">Thesis</div>
-        <div class="placeholder" onclick="showContent('project5')">Memristor</div>
-        <div class="placeholder" onclick="showContent('project6')">Locked in with a Ghost</div>
-        <div class="placeholder" onclick="showContent('project7')">Feelings Festival</div>
-        <div class="placeholder" onclick="showContent('project8')">Project: Stackace</div>
+        <div class="placeholder" onclick="showContent('project1')" data-hover-image="Debug.jpg">Symbiosis</div>
+        <div class="placeholder" onclick="showContent('project2')" data-hover-image="Debug.jpg">Johanna's Syprit</div>
+        <div class="placeholder" onclick="showContent('project3')" data-hover-image="Debug.jpg">Taskmaster</div>
+        <div class="placeholder" onclick="showContent('project4')" data-hover-image="Debug.jpg">Save the Gobelin</div>
+        <div class="placeholder" onclick="showContent('thesis')" data-hover-image="Debug.jpg">Thesis</div>
+        <div class="placeholder" onclick="showContent('project5')" data-hover-image="Debug.jpg">Memristor</div>
+        <div class="placeholder" onclick="showContent('project6')" data-hover-image="Debug.jpg">Locked in with a Ghost</div>
+        <div class="placeholder" onclick="showContent('project7')" data-hover-image="Debug.jpg">Feelings Festival</div>
+        <div class="placeholder" onclick="showContent('project8')" data-hover-image="Debug.jpg">Project: Stackace</div>
+        <div class="placeholder" onclick="showContent('project9')" data-hover-image="Debug.jpg">Cabinet of Curiosity</div>
       </div>
     </div>
     <div class="viewer" id="viewer">
@@ -383,6 +501,7 @@
         <div class="placeholder" onclick="selectMobile('project6')">Locked in with a Ghost</div>
         <div class="placeholder" onclick="selectMobile('project7')">Feelings Festival</div>
         <div class="placeholder" onclick="selectMobile('project8')">Project: Stackace</div>
+        <div class="placeholder" onclick="selectMobile('project9')">Cabinet of Curiosity</div>
       </div>
       <div class="viewer-content" id="viewer-content">
         <h2>About Me</h2>
@@ -411,7 +530,7 @@
       <p>Description and details about Symbiosis.</p>`,
       project2: `<h2>Johanna Syprit</h2>
         <div class="iframe-wrapper">
-        <iframe src="https://www.youtube.com/embed/Tl9wrmYFZBo?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/Tl9wrmYFZBo?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
         </div>
         <p>Description and details about Johanna Syprit.</p>
         <div class="gallery-wrapper">
@@ -428,40 +547,43 @@
         <div class="iframe-wrapper">
           <iframe src="https://www.youtube.com/embed/1P3K6GGuKKk?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
         </div>
-        <p>Taskmaster operates as a critical examination of how labor, particularly within the AI industry, is often rendered invisible and under-evaluated. Drawing on concepts from game design and platform studies, the project illustrates how gamification can mask exploitative practices behind engaging and seemingly innocuous interfaces. By simulating real-world microtasks and data annotation processes within a fast-paced, reward-oriented environment, the game prompts players to confront how digital systems commodify cognitive effort and attention. Serving both as an experiential game and an analytical lens, Taskmaster exposes the blurred boundaries between play and work, while also exploring the use of dark design patterns that drive user compliance and persistence.</p>
-        <BR>
-        <p>"Welcome to the ultimate challenge! Fast, fun and dangerously addictive, Taskmaster offers a series of vibrant micro-tasks that test your memory, precision and speed. Whether you're aiming for a high score or just passing the time, there's always another round waiting for you. Simple to learn but hard to master, it will certainly put your skills to the test. <BR> If the game starts to feel familiar, even a bit like work, don't worry: that just means you’re in the flow. The best players stay focused, keep clicking, and trust the system. Every task, no matter how mundane or disturbing, feeds your development. Ultimately, only players with enough persistence will find their balance. Sometimes dedication is needed to make real progress and reap the rewards of your hard work."</p>
-        <BR>
-        <BR>
-        <BR>
-        <BR>
-        <BR>
-        <BR>`,
+        <p>Taskmaster operates as a critical examination of how labor, particularly within the AI industry, is often rendered invisible and under-evaluated...</p>`,
       project4: `<h2>Save the Gobelin</h2>
         <div class="iframe-wrapper">
           <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
         </div>
-        <p>This project demonstrates a large volume of content to test scrolling behavior on the viewer side.</p>
-        <img src="https://via.placeholder.com/600x400" alt="Save the Gobelin Image 1">
-        <img src="https://via.placeholder.com/600x400" alt="Save the Gobelin Image 2">
-        <img src="https://via.placeholder.com/600x400" alt="Save the Gobelin Image 3">`,
+        <p>This project demonstrates a large volume of content to test scrolling behavior on the viewer side.</p>`,
       thesis: `<h2>Thesis</h2>
         <p>Details and insights about my thesis project. Coming soon...</p>`,
       project5: `<h2>Memristor</h2>
         <p>Description and details about Memristor.</p>`,
       project6: `<h2>Locked in with a Ghost</h2>
-        <p>Description and details about this immersive narrative experience.</p>`,
+        <p><BR>Locked in with a Ghost is a virtual escape game set in a moody marine environment...</p>`,
       project7: `<h2>Feelings Festival</h2>
         <div class="iframe-wrapper">
           <iframe src="https://www.youtube.com/embed/GjTrM8g8HdM?autoplay=1&mute=1" frameborder="0" allowfullscreen></iframe>
         </div>`,
       project8: `<h2>Projet Stackace</h2>
-      <p>Description and details about the Stackace project.</p>`
+        <p>Description and details about the Stackace project.</p>`,
+      project9: `<h2>Cabinet of Curiosity</h2>
+        <p>Gallery of random work and images from the past (¿ and the future ?)</p>`
     };
 
     function showContent(key) {
       const viewer = document.getElementById('viewer-content');
       viewer.style.opacity = 0;
+
+      // Remove active class from all placeholders
+      document.querySelectorAll('.placeholder').forEach(placeholder => {
+        placeholder.classList.remove('active');
+      });
+
+      // Add active class to the selected placeholder
+      const activePlaceholder = document.querySelector(`.placeholder[onclick="showContent('${key}')"]`);
+      if (activePlaceholder) {
+        activePlaceholder.classList.add('active');
+      }
+
       setTimeout(() => {
         viewer.innerHTML = contentMap[key] || '<p>Content not found.</p>';
         viewer.style.opacity = 1;
@@ -477,6 +599,16 @@
       toggleMobileMenu();
       showContent(key);
     }
+
+    // Set hover images using JavaScript
+    document.querySelectorAll('.placeholder').forEach(placeholder => {
+      const hoverImage = placeholder.getAttribute('data-hover-image');
+      if (hoverImage) {
+        placeholder.addEventListener('mouseenter', function() {
+          this.style.setProperty('--hover-image', `url(${hoverImage})`);
+        });
+      }
+    });
   </script>
   <div class="floating-icons">
     <button onclick="window.open('https://www.instagram.com/enzo.srr/', '_blank')" title="Instagram">
