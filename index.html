@@ -79,6 +79,7 @@
     .menu {
       flex: 0 0 18%;
       overflow-y: scroll;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
       padding: 20px;
       border-right: 3.5px solid rgba(0, 255, 120, 0.4);
     }
@@ -95,6 +96,10 @@
     }
     .menu-title:hover {
       color: rgb(0, 255, 120);
+    }
+    .menu-title, .placeholder {
+      width: 100%; /* Ensure full width utilization */
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
     }
     .viewer {
       flex: 3;
