@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>Enzo Seurre - Portfolio</title>
   <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -457,7 +457,7 @@
   <div class="container">
     <div class="menu" id="menu">
       <div class="section">
-        <h2 class="menu-title" onclick="showContent('about')">Portfolio</h2>
+        <h2 class="menu-title" onclick="showContent('about')">Enzo Seurre</h2>
         <div class="placeholder" onclick="showContent('project1')" data-hover-image="Debug.jpg">Johanna Syprit</div>
         <div class="placeholder" onclick="showContent('project2')" data-hover-image="Debug.jpg">Taskmaster</div>
         <div class="placeholder" onclick="showContent('project3')" data-hover-image="Debug.jpg">Symbiosis</div>
@@ -473,7 +473,7 @@
     <div class="viewer" id="viewer">
       <button class="hamburger" onclick="toggleMobileMenu()">☰</button>
       <div class="mobile-menu" id="mobile-menu">
-        <h2 class="menu-title" onclick="showContent('about')">Portfolio</h2>
+        <h2 class="menu-title" onclick="showContent('about')">Enzo Seurre</h2>
         <div class="placeholder" onclick="selectMobile('project1')">Johanna's Syprit</div>
         <div class="placeholder" onclick="selectMobile('project2')">Taskmaster</div>
         <div class="placeholder" onclick="selectMobile('project3')">Symbiosis</div>
@@ -496,15 +496,30 @@
         </svg>
       </div>
       <div class="viewer-content" id="viewer-content">
-        <h2>About Me</h2>
-        <p>This is a general presentation about me. I'm a web developer passionate about building clean, functional, and engaging user experiences.</p>
-      </div>
+        <h2>About Me</h2><BR>
+        <p>Hello! I'm Enzo Seurre, an interaction designer mainly focused on games and interactive experiences, with a strong inclination toward social issues. I enjoy creating playful yet meaningful experiences that question our relationship with technology and how we can use it without letting it use us. But sometimes, I also like to experiment things just for fun! In my practice, I'm mostly interested by doing games and 3D. You can explore my projects by clicking on their names in the menu! <BR>  <BR> You can also see my socials by clicking the icons below to further see my projects, try some of my games or to get in touch! <BR>If you want, you can also write me at my email: seurreenzo@gmail.com</p>
+      <BR><div class="gallery-wrapper">
+        <div class="gallery-row gallery-row-2">
+          <div class="gallery-item horizontal">
+            <img src="About/Cover.png" alt="About Cover">
+          </div>
+        </div>
+      </div><BR><BR>
+        </div>
     </div>
   </div>
   <script>
     const contentMap = {
       about: `<h2>About Me</h2><BR>
-        <p>This is a general presentation about me. I'm a web developer passionate about building clean, functional, and engaging user experiences.</p>`,
+        <p>Hello! I'm Enzo Seurre, an interaction designer mainly focused on games and interactive experiences, with a strong inclination toward social issues. I enjoy creating playful yet meaningful experiences that question our relationship with technology and how we can use it without letting it use us. But sometimes, I also like to experiment things just for fun! In my practice, I'm mostly interested by doing games and 3D. You can explore my projects by clicking on their names in the menu! <BR>  <BR> You can also see my socials by clicking the icons below to further see my projects, try some of my games or to get in touch!<BR> If you want, you can also write me at my email: seurreenzo@gmail.com</p>
+         <BR> <div class="gallery-wrapper">
+        <div class="gallery-row gallery-row-2">
+          <div class="gallery-item horizontal">
+            <img src="About/Cover.png" alt="About Cover">
+          </div>
+        </div>
+      </div><BR><BR>
+          `,
       project3: `<h2>Symbiosis</h2><BR>
       <div class="gallery-wrapper">
         <div class="gallery-row gallery-row-2">
@@ -513,7 +528,7 @@
           </div>
         </div>
       </div><BR>
-      <p>In a design fiction approach, Symbiosis envisions a future of democracy where citizens, living beings, and open-source AI models collaborate to tackle the challenges of tomorrow. In this installation, you embody a Swiss citizen in the year 2050. By scanning the different artifacts within the installation, you contribute to the database of the "Maire de Terre," an AI totem that proposes laws and helps the population address major ecological and digital issues based on human-curated data and situations. Based on the reintegration of electronic waste and mycelial networks, this installation is made of recycled digital objects and living organic matter. The project was developed in collaboration with the Graduate Institute in Geneva, was exhibited in Geneva in 2024, and is currently exhibited at Politforum in Bern until 2026.</p>
+      <p>In a design fiction approach, Symbiosis envisions a future of democracy where citizens, living beings, and open-source AI models collaborate to tackle the challenges of tomorrow. In this installation, you embody a Swiss citizen in the year 2050. By scanning the different artifacts within the installation, you contribute to the database of the "Maire de Terre," an AI totem that proposes laws and helps the population address major ecological and digital issues based on human-curated data and situations. Based on the reintegration of electronic waste and mycelial networks, this installation is made of recycled digital objects and living organic matter. The project was developed in collaboration with the Graduate Institute in Geneva, was exhibited in Geneva in 2024, and is currently exhibited at Politforum in Bern until 2026. <BR> This project was made in collaboration with: Naomi Blidariu (@nao_bldr), Basile Brun @chap0ng), Sarah Meylan (@sarah.meylan), Lauren Thiel (@pensthiel), Vytas Jankauskas (@veeetautas), Marta Revuelta (@mrtrevuelta)</p>
       <BR><div class="gallery-wrapper">
         <div class="gallery-row gallery-row-4">
           <div class="gallery-item">
@@ -538,7 +553,7 @@
             </div>
           </div>
         </div>
-        <BR><p>Developed for the Swiss Pavilion at the 2025 International Exhibition and showcased in Osaka, Johanna Spyrit is a VR experience that invites visitors into the imaginative mind of Johanna Spyri, author of Heidi, as she begins writing the novel in 1886.</p>
+        <BR><p>Developed with Adam Chatir (@cybrneon) and Sarah Meylan (@sarah.meylan) for the Swiss Pavilion at the 2025 International Exhibition and showcased in Osaka, Johanna Spyrit is a VR experience that invites visitors into the imaginative mind of Johanna Spyri, author of Heidi, as she begins writing the novel in 1886.</p>
         <BR><p>Will the first page always be the same? Suspended above a mountain of paper, the visitor is faced with a “Blank Page”, a dreamlike, empty world where characters emerge in their hands. By listening to them and making narrative and meaningful choices, visitors shape the environment, generating a unique, animated, and evolving landscape. Each path taken creates new visual and narrative possibilities.</p>
         <BR><p>The experience explores the power of creative choices and how they influence the meaning and impact of artistic works. It also touches on central themes from Heidi: the contrast between nature and urban life, tradition and modernity, and how these tensions continue to resonate today.</p>
         <BR><div class="iframe-wrapper">
@@ -556,7 +571,7 @@
               <img src="Heidi/3.png" alt="Johanna Syprit Image 2">
             </div>
           </div>
-        </div>`,
+        </div><BR><BR>`,
       project2: `<h2>Taskmaster</h2><BR>
         <div class="gallery-wrapper">
           <div class="gallery-row gallery-row-2">
@@ -591,7 +606,7 @@
             </div>
           </div>
         </div>
-        <p>Save the Goblin is an AR video game using machine learning as controllers. Simply scan the various posters to reveal the puzzles to be solved. There are two ways of solving the puzzles: on your own by memorizing the sequences or by asking someone else for help. The player then has to make the corresponding moves in the magic box to free one of their companions.</p>
+        <p>Save the Goblin is an AR video game using machine learning as controllers made in collaboration with Basile Brun (@chap0ng) and Oceane Serrat (@at.zima) . Simply scan the various posters to reveal the puzzles to be solved. There are two ways of solving the puzzles: on your own by memorizing the sequences or by asking someone else for help. The player then has to make the corresponding moves in the magic box to free one of their companions.</p>
         <p>In the heart of the Forêhead, the mage Macintox has held sway over the goblins for several millennia. He uses them for evil purposes... Your companions Int, Bool, Var, and Float have fallen into his traps. Free them with the power of Cheatmove, which only you possess. Can you outwit the great magician’s labyrinths?</p>
         <BR>
         <div class="gallery-wrapper">
@@ -684,10 +699,19 @@
           </div>
         </div><BR><BR>`,
       project7: `<h2>Feelings Festival</h2><BR>
-        <div class="iframe-wrapper">
+        <div class="gallery-wrapper">
+          <div class="gallery-row gallery-row-2">
+            <div class="gallery-item horizontal">
+              <img src="FF/Cover.png" alt="FF Cover">
+            </div>
+          </div>
+        </div>
+        <BR>
+        <p>Made in unreal engine, feelings festival is a 3D short film that attempts to convey my feelings as a person with emotional and auditory hypersensitivity during a live performance. The viewer sees a shape-shifting creature dancing to the rhythm of the music, taking the form of the emotions running through him. As the show progresses, the audience moves closer to the stage, isolating themselves in a face-to-face space with the creature, becoming more and more emotionally involved. At the end of the show, the sudden deafening applause disturbs both the viewer and the creature, causing it to deform in pain.<p>
+        <BR>
+          <div class="iframe-wrapper">
           <iframe src="https://www.youtube.com/embed/GjTrM8g8HdM?" frameborder="0" allowfullscreen></iframe>
         </div>
-        <p>Made in unreal engine, feelings festival is a 3D short film that attempts to convey my feelings as a person with emotional and auditory hypersensitivity during a live performance. The viewer sees a shape-shifting creature dancing to the rhythm of the music, taking the form of the emotions running through him. As the show progresses, the audience moves closer to the stage, isolating themselves in a face-to-face space with the creature, becoming more and more emotionally involved. At the end of the show, the sudden deafening applause disturbs both the viewer and the creature, causing it to deform in pain.<p>
         <div class="gallery-wrapper">
           <div class="gallery-row gallery-row-4">
             <div class="gallery-item horizontal">
@@ -700,10 +724,112 @@
         </div>
           <BR><BR><BR><BR>
           `,
-      project8: `<h2>Projet Stackace</h2><BR>
-        <p>Description and details about the Stackace project.</p>`,
+      project8: `<h2>Project: Stackace</h2><BR>
+        <div class="gallery-wrapper">
+          <div class="gallery-row gallery-row-2">
+            <div class="gallery-item horizontal">
+              <img src="Stack/Cover.png" alt="Stackace Cover">
+            </div>
+          </div>
+        </div><BR>
+        <p>Made in collaboration with Axel Nowak (@maxelhi), Stackace (name not definitive) is a narrative boss-rush deckbuilder videogame set in a desolate, dreamlike world ruled by ancient giants. Stack cards to create powerful synergies, outsmart your enemies, and uncover the intertwined stories of two protagonists.<BR> <BR>Right under you can find the trailer of our very first proof-of-concept demo that features a single boss fight showcasing the core combat mechanics with very basic cards, art direction, and atmosphere of the project. Some bits are still written in french tho, sorry! If you want to try the demo, it is avaliable on my itch.io page; if you do so, don't hesitate to write to me or Axel to give feedbacks! More to come soon!<p> 
+        <BR><div class="iframe-wrapper">
+        <iframe src="https://www.youtube.com/embed/YGOs8P2l65U?" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="gallery-wrapper">
+          <div class="gallery-row gallery-row-4">
+            <div class="gallery-item horizontal">
+              <img src="Stack/1.png" alt="Stackace Image 1">
+            </div>
+            <div class="gallery-item horizontal">
+              <img src="Stack/2.png" alt="Stackace Image 2">
+            </div>
+          </div>
+        </div><BR><BR>`,
       project9: `<h2>Cabinet of Curiosity</h2><BR>
-        <p>Gallery of random work and images from the past (¿ and the future ?)</p>`
+        <p>Gallery of random work and images from the past (¿ and the future ?). Contains stills from games, editions, animations, 3D works...</p>
+        <div class="gallery-wrapper">
+          <div class="gallery-row gallery-row-4">
+            <div class="gallery-item">
+              <img src="Cabinet/1.png" alt="Curio Image 1">
+            </div>
+            <div class="gallery-item">
+              <img src="Cabinet/2.png" alt="Curio Image 2">
+            </div>
+            <div class="gallery-item horizontal">
+              <img src="Cabinet/3.png" alt="Curio Image 3">
+            </div>
+          </div>
+          <div class="gallery-row gallery-row-4">
+            <div class="gallery-item horizontal">
+              <img src="Cabinet/4.png" alt="Curio Image 3">
+            </div>
+              <div class="gallery-item horizontal">
+              <img src="Cabinet/5.png" alt="Curio Image 3">
+            </div>
+          </div>
+          <div class="gallery-row gallery-row-4">
+            <div class="gallery-item">
+              <img src="Cabinet/6.png" alt="Curio Image 1">
+            </div>
+            <div class="gallery-item">
+              <img src="Cabinet/7.png" alt="Curio Image 2">
+            </div>
+            <div class="gallery-item horizontal">
+              <img src="Cabinet/8.png" alt="Curio Image 3">
+            </div>
+          </div>
+           <div class="gallery-row gallery-row-4">
+            <div class="gallery-item horizontal">
+              <img src="Cabinet/9.png" alt="Curio Image 1">
+            </div>
+            <div class="gallery-item horizontal">
+              <img src="Cabinet/10.png" alt="Curio Image 3">
+            </div>
+          </div>
+          <div class="gallery-row gallery-row-4">
+            <div class="gallery-item">
+              <img src="Cabinet/11.png" alt="Curio Image 1">
+            </div>
+            <div class="gallery-item">
+              <img src="Cabinet/12.png" alt="Curio Image 2">
+            </div>
+            <div class="gallery-item horizontal">
+              <img src="Cabinet/13.png" alt="Curio Image 3">
+            </div>
+          </div>
+          <div class="gallery-row gallery-row-4">
+            <div class="gallery-item horizontal">
+              <img src="Cabinet/14.png" alt="Curio Image 1">
+            </div>
+            <div class="gallery-item">
+              <img src="Cabinet/15.png" alt="Curio Image 2">
+            </div>
+            <div class="gallery-item">
+              <img src="Cabinet/16.png" alt="Curio Image 3">
+            </div>
+          </div>
+          <div class="gallery-row gallery-row-4">
+            <div class="gallery-item">
+              <img src="Cabinet/19.png" alt="Curio Image 1">
+            </div>
+            <div class="gallery-item">
+              <img src="Cabinet/20.png" alt="Curio Image 2">
+            </div>
+            <div class="gallery-item horizontal">
+              <img src="Cabinet/17.png" alt="Curio Image 3">
+            </div>
+          </div>
+          <div class="gallery-row gallery-row-4">
+          <div class="gallery-item horizontal">
+            <img src="Cabinet/18.png" alt="Curio Image 1">
+          </div>
+          <div class="gallery-item horizontal">
+            <img src="Cabinet/21.png" alt="Curio Image 3">
+          </div>
+        </div>
+        </div><BR><BR>
+        `
     };
 
     function showContent(key) {
@@ -761,7 +887,7 @@
             text = 'Work in progress...';
             break;
           case 'project9':
-            text = 'Some archives bits';
+            text = 'Some archived bits';
             break;
           default:
             text = 'Lets get in touch!';
