@@ -8,21 +8,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: '250316-Regular';
+      src: url('250316-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     /* Default cursor for the entire page */
     body {
       cursor: url('images/custom-cursor-default2.png'), auto;
+      font-family: '250316-Regular', serif;
     }
+
     /* Pointer cursor for clickable elements */
     a, button, .placeholder, .placeholder:hover, .menu-title:hover, .floating-icons button:hover {
       cursor: url('images/custom-cursor-pointer5.png'), pointer;
     }
-    a{
+
+    a {
       color: #00ff7866;
     }
+
     .bricolage-grotesque {
       font-family: "Bricolage Grotesque", sans-serif;
       font-optical-sizing: auto;
@@ -31,61 +39,36 @@
       font-variation-settings: "wdth" 100;
       transition: font-weight 3s ease;
     }
+
     .bricolage-grotesque:hover {
       font-weight: 800;
     }
-    .crimson-text-regular {
-      font-family: "Crimson Text", serif;
-      font-weight: 400;
-      font-style: normal;
-    }
-    .crimson-text-semibold {
-      font-family: "Crimson Text", serif;
-      font-weight: 600;
-      font-style: normal;
-    }
-    .crimson-text-bold {
-      font-family: "Crimson Text", serif;
-      font-weight: 700;
-      font-style: normal;
-    }
-    .crimson-text-regular-italic {
-      font-family: "Crimson Text", serif;
-      font-weight: 400;
-      font-style: italic;
-    }
-    .crimson-text-semibold-italic {
-      font-family: "Crimson Text", serif;
-      font-weight: 600;
-      font-style: italic;
-    }
-    .crimson-text-bold-italic {
-      font-family: "Crimson Text", serif;
-      font-weight: 700;
-      font-style: italic;
-    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     html, body {
       height: 100%;
       overflow: hidden;
-      font-family: Arial, sans-serif;
     }
+
     .container {
       display: flex;
       height: 100vh;
       width: 100vw;
     }
+
     .menu {
       flex: 0 0 18%;
       overflow-y: scroll;
-      overflow-x: hidden; /* Prevent horizontal scrolling */
+      overflow-x: hidden;
       padding: 20px;
       border-right: 3.5px solid #00ff7866;
     }
+
     .menu-title {
       text-align: center;
       cursor: pointer;
@@ -97,13 +80,16 @@
       font-optical-sizing: auto;
       font-weight: 400;
     }
+
     .menu-title:hover {
       color: rgb(0, 255, 120);
     }
+
     .menu-title, .placeholder {
-      width: 100%; /* Ensure full width utilization */
-      box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      width: 100%;
+      box-sizing: border-box;
     }
+
     .viewer {
       flex: 3;
       overflow-y: scroll;
@@ -111,13 +97,16 @@
       position: relative;
       width: 100%;
     }
+
     .section {
       margin-bottom: 40px;
     }
+
     .section h2 {
       margin-bottom: 10px;
       font-weight: 600;
     }
+
     .placeholder {
       height: 75px;
       background: #effff3;
@@ -143,20 +132,24 @@
       text-align: center;
       flex-direction: column;
     }
+
     .placeholder span {
       display: inline-block;
       text-align: center;
     }
+
     @media (max-width: 768px) {
       .placeholder {
         font-size: calc(8px + 3vw);
       }
     }
+
     @media (max-width: 480px) {
       .placeholder {
         font-size: calc(8px + 3vw);
       }
     }
+
     .placeholder:hover {
       transform: scale(1.07);
       background-color: #d2f5dc;
@@ -164,10 +157,12 @@
       margin-top: 24px;
       font-weight: 800;
     }
+
     .placeholder.active {
       font-weight: 800;
       border: 4px solid rgba(0, 150, 50, 0.8);
     }
+
     .placeholder::after {
       content: '';
       position: absolute;
@@ -182,10 +177,12 @@
       opacity: 0;
       transition: opacity 0.3s ease, transform 0.3s ease;
     }
+
     .placeholder:hover::after {
       opacity: 1;
       animation: scaleUp 0.3s ease;
     }
+
     @keyframes scaleUp {
       from {
         transform: scale(0.5);
@@ -194,19 +191,21 @@
         transform: scale(1);
       }
     }
+
     .viewer-content {
       padding: 20px;
       justify-content: left;
       text-align: center;
-      font-family: "Crimson Text", serif;
+      font-family: '250316-Regular', serif;
       font-weight: 420;
-      font-size: 20px;
+      font-size: 18px;
       background: #fffffff6;
       min-height: 100%;
       border-radius: 18px;
       transition: opacity 0.5s ease-in-out;
       opacity: 1;
     }
+
     .viewer-content h2 {
       text-align: center;
       font-size: 42px;
@@ -214,6 +213,7 @@
       font-optical-sizing: auto;
       font-weight: 600;
     }
+
     .sticker {
       position: fixed;
       top: 20px;
@@ -229,18 +229,21 @@
       border: 4px solid rgba(0, 255, 120, 0.4);
       z-index: 1000;
     }
+
     .circular-text {
       width: 70px;
       height: 70px;
       animation: rotateText 15s linear infinite;
       z-index: 2000;
     }
+
     .circular-text text {
       font-size: 24px;
       fill: rgb(0, 0, 0);
       font-weight: bold;
       z-index: 2000;
     }
+
     @keyframes rotateText {
       from {
         transform: rotate(0deg);
@@ -249,6 +252,7 @@
         transform: rotate(360deg);
       }
     }
+
     .iframe-wrapper {
       background: rgba(0, 255, 120, 0.1);
       border-radius: 18px;
@@ -258,6 +262,7 @@
       border: 3.5px solid rgba(0, 255, 120, 0.4);
       position: relative;
     }
+
     .iframe-wrapper::before {
       content: '';
       position: absolute;
@@ -269,6 +274,7 @@
       border: 2px solid rgba(0, 255, 120, 0.25);
       pointer-events: none;
     }
+
     .viewer-content iframe {
       position: relative;
       z-index: 1;
@@ -280,11 +286,13 @@
       aspect-ratio: 16 / 9;
       border: none;
     }
+
     .viewer-content img {
       max-width: 100%;
       margin: 10px auto;
       display: block;
     }
+
     .hamburger {
       display: none;
       position: absolute;
@@ -298,6 +306,7 @@
       font-size: 24px;
       cursor: pointer;
     }
+
     .mobile-menu {
       position: absolute;
       top: 0;
@@ -311,9 +320,11 @@
       z-index: 9;
       transition: left 0.3s ease-in-out;
     }
+
     .mobile-menu.open {
       left: 0;
     }
+
     .floating-icons {
       position: fixed;
       bottom: 30px;
@@ -323,6 +334,7 @@
       z-index: 100;
       color: rgb(0, 255, 120);
     }
+
     .floating-icons button {
       background: #effff3;
       border: 3px solid rgb(0, 255, 120);
@@ -333,12 +345,14 @@
       color: rgb(0, 255, 120);
       transition: all 0.3s ease;
     }
+
     .floating-icons button:hover {
       background: #b1ffd1;
       border-color: #00ff78;
       color: #00ff78;
       transform: scale(1.1);
     }
+
     .gallery-wrapper {
       background: rgba(0, 255, 119, 0.021);
       border-radius: 18px;
@@ -351,6 +365,7 @@
       border: 3.5px solid rgba(0, 255, 119, 0.158);
       position: relative;
     }
+
     .gallery-wrapper::before {
       content: '';
       position: absolute;
@@ -362,15 +377,18 @@
       border: 2px solid rgba(0, 255, 119, 0);
       pointer-events: none;
     }
+
     .gallery-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       margin-bottom: 4px;
     }
+
     .gallery-row:last-child {
       margin-bottom: 0;
     }
+
     .gallery-item {
       flex: 1;
       min-width: 49%;
@@ -380,16 +398,19 @@
       border-radius: 18px;
       overflow: hidden;
     }
+
     .gallery-item.horizontal {
       min-width: 98%;
       max-width: 98%;
     }
+
     .gallery-item img {
       width: 100%;
       height: auto;
       display: block;
       border-radius: 18px;
     }
+
     @media (min-width: 768px) {
       .gallery-row-4 .gallery-item {
         min-width: 24%;
@@ -408,12 +429,14 @@
         max-width: 98%;
       }
     }
+
     @media (max-width: 767px) {
       .gallery-item {
         min-width: 98%;
         max-width: 98%;
       }
     }
+
     @media (max-width: 768px) {
       .menu {
         display: none;
@@ -425,7 +448,6 @@
         width: 70px;
         height: 70px;
       }
-
       .circular-text text{
         font-size: 18px;
       }
@@ -445,6 +467,7 @@
         display: none;
       }
     }
+
     @keyframes blob {
       0% {
         border-radius: 16px;
@@ -505,7 +528,7 @@
       </div>
       <div class="viewer-content" id="viewer-content">
         <h2>About</h2><BR>
-        <p>Hello! I'm Enzo Seurre, an interaction designer mainly focused on games and interactive experiences, with a strong inclination toward social issues. I enjoy creating playful yet meaningful experiences that question our relationship with technology and how we can use it without letting it use us. But sometimes, I also like to experiment things just for fun! In my practice, I'm mostly interested by doing games and 3D. You can explore my projects by clicking on their names in the menu! <BR>  <BR> You can see my resume <a href="Enzo_SEURRE_Resume.pdf" target="_blank" download="Enzo_SEURRE_Resume">here</a>, go to my socials by clicking the icons below to further learn about me or my projects, try some of my games or to get in touch! <BR>If you want, you can also write me at my email: seurreenzo@gmail.com</p>
+        <p>Hello! I'm Enzo Seurre, an interaction designer mainly focused on games and interactive experiences, with a strong inclination toward social issues. I enjoy creating playful yet meaningful experiences that question our relationship with technology and how we can use it without letting it use us. But sometimes, I also like to experiment things just for fun! In my practice, I'm mostly interested by doing games and 3D. You can explore my projects by clicking on their names in the menu! <BR>  <BR> You can see my resume <a href="Enzo_SEURRE_Resume.pdf" target="_blank" download="Enzo_SEURRE_Resume">here</a>, go to my socials by clicking the icons below to further learn about me or my projects, try some of my games or to get in touch! If you want, you can also write me an email at seurreenzo@gmail.com</p>
       <BR><div class="gallery-wrapper">
         <div class="gallery-row gallery-row-2">
           <div class="gallery-item horizontal">
@@ -519,7 +542,7 @@
   <script>
     const contentMap = {
       about: `<h2>About Me</h2><BR>
-        <p>Hello! I'm Enzo Seurre, an interaction designer mainly focused on games and interactive experiences, with a strong inclination toward social issues. I enjoy creating playful yet meaningful experiences that question our relationship with technology and how we can use it without letting it use us. But sometimes, I also like to experiment things just for fun! In my practice, I'm mostly interested by doing games and 3D. You can explore my projects by clicking on their names in the menu! <BR>  <BR> You can see my resume <a href="Enzo_SEURRE_Resume.pdf" target="_blank" download="Enzo_SEURRE_Resume">here</a>, go to my socials by clicking the icons below to further learn about me or my projects, try some of my games or to get in touch! <BR>If you want, you can also write me at my email: seurreenzo@gmail.com</p>
+        <p>Hello! I'm Enzo Seurre, an interaction designer mainly focused on games and interactive experiences, with a strong inclination toward social issues. I enjoy creating playful yet meaningful experiences that question our relationship with technology and how we can use it without letting it use us. But sometimes, I also like to experiment things just for fun! In my practice, I'm mostly interested by doing games and 3D. You can explore my projects by clicking on their names in the menu! <BR>  <BR> You can see my resume <a href="Enzo_SEURRE_Resume.pdf" target="_blank" download="Enzo_SEURRE_Resume">here</a>, go to my socials by clicking the icons below to further learn about me or my projects, try some of my games or to get in touch! If you want, you can also write me an email at seurreenzo@gmail.com</p>
         <BR> <div class="gallery-wrapper">
         <div class="gallery-row gallery-row-2">
           <div class="gallery-item horizontal">
@@ -536,7 +559,7 @@
           </div>
         </div>
       </div><BR>
-      <p>In a design fiction approach, Symbiosis envisions a future of democracy where citizens, living beings, and open-source AI models collaborate to tackle the challenges of tomorrow. In this installation, you embody a Swiss citizen in the year 2050. By scanning the different artifacts within the installation, you contribute to the database of the "Maire de Terre," an AI totem that proposes laws and helps the population address major ecological and digital issues based on human-curated data and situations. Based on the reintegration of electronic waste and mycelial networks, this installation is made of recycled digital objects and living organic matter. The project was developed in collaboration with the Graduate Institute in Geneva, was exhibited in Geneva in 2024, and is currently exhibited at Politforum in Bern until 2026. <BR> This project was made in collaboration with: Naomi Blidariu (@nao_bldr), Basile Brun @chap0ng), Sarah Meylan (@sarah.meylan), Lauren Thiel (@pensthiel), Vytas Jankauskas (@veeetautas), Marta Revuelta (@mrtrevuelta)</p>
+      <p>In a design fiction approach, Symbiosis envisions a future of democracy where citizens, living beings, and open-source AI models collaborate to tackle the challenges of tomorrow. In this installation, you embody a Swiss citizen in the year 2050. By scanning the different artifacts within the installation, you contribute to the database of the "Maire de Terre," an AI totem that proposes laws and helps the population address major ecological and digital issues based on human-curated data and situations. Based on the reintegration of electronic waste and mycelial networks, this installation is made of recycled digital objects and living organic matter. The project was developed in collaboration with the Graduate Institute in Geneva, was exhibited in Geneva in 2024, and is currently exhibited at Politforum in Bern until 2026. <BR> <BR>This project was made in collaboration with: Naomi Blidariu (@nao_bldr), Basile Brun @chap0ng), Sarah Meylan (@sarah.meylan), Lauren Thiel (@pensthiel), Vytas Jankauskas (@veeetautas), Marta Revuelta (@mrtrevuelta)</p>
       <BR><div class="gallery-wrapper">
         <div class="gallery-row gallery-row-4">
           <div class="gallery-item">
@@ -615,7 +638,7 @@
           </div>
         </div>
         <p>Save the Goblin is an AR video game using machine learning as controllers made in collaboration with Basile Brun (@chap0ng) and Oceane Serrat (@at.zima) . Simply scan the various posters to reveal the puzzles to be solved. There are two ways of solving the puzzles: on your own by memorizing the sequences or by asking someone else for help. The player then has to make the corresponding moves in the magic box to free one of their companions.</p>
-        <p>In the heart of the Forêhead, the mage Macintox has held sway over the goblins for several millennia. He uses them for evil purposes... Your companions Int, Bool, Var, and Float have fallen into his traps. Free them with the power of Cheatmove, which only you possess. Can you outwit the great magician’s labyrinths?</p>
+        <BR><p>In the heart of the Forêhead, the mage Macintox has held sway over the goblins for several millennia. He uses them for evil purposes... Your companions Int, Bool, Var, and Float have fallen into his traps. Free them with the power of Cheatmove, which only you possess. Can you outwit the great magician’s labyrinths?</p>
         <BR>
         <div class="gallery-wrapper">
           <div class="gallery-row gallery-row-4">
@@ -639,7 +662,7 @@
           </div>
         </div>
         <BR>
-        <p>This thesis explores the evolution of video games through the prism of the impact of human, material, and creative resources. As technological advances have enabled the creation of increasingly complex and resource-intensive games, video games have transformed from a marginal creative practice into a globalized and lucrative industry. The analysis highlights the effects of this growth on production dynamics, standardization of development, and dependence on complex technologies. Through a comparative study of Starfield and Outer Wilds, two recent games with opposing design philosophies, this dissertation examines dominant industry practices and the alternatives emerging in the independent field. The chapters deal successively with the intensive extraction of human and natural resources, then with the possibilities for creative reappropriation of design processes, advocating subtractive design approaches and more sustainable video game experiences. By integrating historical, sociological, and political perspectives, the aim is to question the sustainability of a model based on "techno-industrial glorification" and to propose avenues for more responsible and innovative video game design.</p>
+        <p>This thesis explores the evolution of video games through the prism of the impact of human, material, and creative resources. As technological advances have enabled the creation of increasingly complex and resource-intensive games, video games have transformed from a marginal creative practice into a globalized and lucrative industry. The analysis highlights the effects of this growth on production dynamics, standardization of development, and dependence on complex technologies. Through a comparative study of Starfield and Outer Wilds, two recent games with opposing design philosophies, this dissertation examines dominant industry practices and the alternatives emerging in the independent field. <BR> <BR>The chapters deal successively with the intensive extraction of human and natural resources, then with the possibilities for creative reappropriation of design processes, advocating subtractive design approaches and more sustainable video game experiences. By integrating historical, sociological, and political perspectives, the aim is to question the sustainability of a model based on "techno-industrial glorification" and to propose avenues for more responsible and innovative video game design.</p>
         <BR>
         You can read the full thesis <a href="ES_Thesis_English.pdf" target="_blank" download="ES_Thesis_English">here (english)</a> or <a href="ES_Thesis_French.pdf" target="_blank" download="ES_Thesis_French">here (french)</a>.<BR>
         <BR>
@@ -661,7 +684,7 @@
             </div>
           </div>
         </div>
-        <p>Memristor is a transmedia project that explores a technological dystopia through multiple artistic mediums, including short film, set photography, comics, Augmented reality, interactive software and 3D modeling. At its core, the project immerses us in a cold, oppressive ghost city shaped by metallic, electronic architecture, a fictional archive drawn from walks through unsettling, brutalist urban landscapes. The short film uses video-inlay techniques to place a live-action character within a fully modeled 3D environment, with visual inspirations from comic books, early 3D video games, and science fiction cinema, reinforcing a sense of alienation and dystopia. Parallel to this, the project includes a photographic series and a comic strip built from the same 3D models, allowing nonlinear storytelling through different visual languages. Through these varied media, Memristor constructs a layered narrative world that questions the impact of unchecked architectural growth, the future of our urban environments, and the impact of artificial intelligence technologies on our human relationships.</p>
+        <p>Memristor is a transmedia project that explores a technological dystopia through multiple artistic mediums, including short film, set photography, comics, Augmented reality, interactive software and 3D modeling. At its core, the project immerses us in a cold, oppressive ghost city shaped by metallic, electronic architecture, a fictional archive drawn from walks through unsettling, brutalist urban landscapes.<BR><BR> The short film uses video-inlay techniques to place a live-action character within a fully modeled 3D environment, with visual inspirations from comic books, early 3D video games, and science fiction cinema, reinforcing a sense of alienation and dystopia. Parallel to this, the project includes a photographic series and a comic strip built from the same 3D models, allowing nonlinear storytelling through different visual languages. Through these varied media, Memristor constructs a layered narrative world that questions the impact of unchecked architectural growth, the future of our urban environments, and the impact of artificial intelligence technologies on our human relationships.</p>
         <div class="gallery-wrapper">
           <div class="gallery-row gallery-row-4">
             <div class="gallery-item horizontal">
@@ -693,7 +716,7 @@
         </div>
         <BR>
         <p>Locked in with a Ghost is a virtual escape game set in a moody marine environment. The goal is to find the various clues to solve puzzles and exit the room. There are a variety of gameplay approaches and puzzle designs. The narrative is supported by a friendly ghost who talks to you throughout your journey.</p>
-        <p>The main objectives with this short project were to start from the simple prompt of making an escape game, to have room to think about many design aspects that interest me: the environmental narrative, the puzzle design, and the art direction. It was also an opportunity for me to really put together in a game the technical tools and knowledge I had acquired on other projects (texturing, integration, code, modeling...).</p>
+        <BR><p>The main objectives with this short project were to start from the simple prompt of making an escape game, to have room to think about many design aspects that interest me: the environmental narrative, the puzzle design, and the art direction. It was also an opportunity for me to really put together in a game the technical tools and knowledge I had acquired on other projects (texturing, integration, code, modeling...).</p>
         <BR>
         <div class="iframe-wrapper">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/5lJur3hX-gk?si=gYw72DBwh9tmZxSO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
